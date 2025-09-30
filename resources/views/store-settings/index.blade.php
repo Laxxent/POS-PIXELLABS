@@ -10,11 +10,17 @@
     }
     
     .currency-dropdown .form-select {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        -ms-appearance: none !important;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23343a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
         background-repeat: no-repeat;
-        background-position: right 0.75rem center;
-        background-size: 16px 12px;
-        padding-right: 2.5rem;
+        background-position: right 12px center;
+        background-size: 16px;
+        padding-right: 40px;
+        background-color: white;
+        border: 1px solid #ced4da;
     }
     
     .currency-option {
@@ -41,6 +47,7 @@
     
     /* Dark mode support */
     [data-theme="dark"] .currency-dropdown .form-select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
         background-color: #2d3748;
         border-color: #4a5568;
         color: #e9ecef;
@@ -55,6 +62,72 @@
     [data-theme="dark"] .currency-dropdown .form-select option {
         background-color: #2d3748;
         color: #e9ecef;
+    }
+    
+    /* Remove default browser dropdown arrows */
+    .currency-dropdown .form-select::-ms-expand {
+        display: none !important;
+    }
+    
+    .currency-dropdown .form-select::-webkit-outer-spin-button,
+    .currency-dropdown .form-select::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+    }
+    
+    .currency-dropdown .form-select::-moz-appearance {
+        -moz-appearance: none !important;
+    }
+    
+    .currency-dropdown .form-select::-o-appearance {
+        -o-appearance: none !important;
+    }
+    
+    .currency-dropdown .form-select {
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0.375rem !important;
+        outline: none !important;
+    }
+    
+    /* Force arrow visibility in dark mode */
+    [data-theme="dark"] .currency-dropdown .form-select {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        background-size: 20px !important;
+    }
+    
+    /* Ensure arrow is always visible */
+    .currency-dropdown .form-select:focus {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23343a40' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    }
+    
+    [data-theme="dark"] .currency-dropdown .form-select:focus {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    }
+    
+    /* Additional override for dark mode arrow */
+    [data-theme="dark"] .currency-dropdown .form-select,
+    [data-theme="dark"] .currency-dropdown .form-select:hover,
+    [data-theme="dark"] .currency-dropdown .form-select:active,
+    [data-theme="dark"] .currency-dropdown .form-select:focus {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        background-size: 20px !important;
+    }
+    
+    /* Ultra aggressive override for dark mode */
+    html[data-theme="dark"] .currency-dropdown .form-select,
+    html[data-theme="dark"] .currency-dropdown .form-select:hover,
+    html[data-theme="dark"] .currency-dropdown .form-select:active,
+    html[data-theme="dark"] .currency-dropdown .form-select:focus,
+    html[data-theme="dark"] .currency-dropdown .form-select:visited {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        background-size: 20px !important;
     }
 </style>
 @endsection
